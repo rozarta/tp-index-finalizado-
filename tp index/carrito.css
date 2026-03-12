@@ -1,0 +1,135 @@
+.div-1 .carritoicon {
+  position: absolute;
+  cursor: pointer;
+  padding: 5px;
+  top: 10px;
+  right: 140px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+  background-color: transparent;
+  border: none;
+}
+.contador {
+  top: 6px;
+  right: 140px;
+  position: absolute;
+  background-color: #ff4f95;
+  color: white;
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: none; /* Oculto cuando está en 0 */
+}
+
+/*carrito popup*/
+
+/* Fondo gris semitransparente */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  z-index: 9999;
+}
+
+/* Panel del carrito lateral */
+.carrito-lateral {
+  position: absolute;
+  border-radius: 17px;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #fff;
+  border-left: 2px dashed #ffc9db;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+hr {
+  opacity: 40%;
+}
+
+/* Encabezado: título + X */
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrito-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #a65c73;
+}
+
+.close-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a65c73;
+}
+
+/* Lista de productos */
+.carrito-lateral ul {
+  list-style: none;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+.eliminar {
+  color: rgb(255, 0, 128);
+  cursor: pointer;
+  margin-left: 4em;
+  font: 17px;
+}
+
+/* Total */
+.carrito-lateral p {
+  font-size: 18px;
+  margin: 0;
+  color: #a65c73;
+}
+
+/* Footer: Confirmar Pedido centrado abajo */
+.carrito-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.carrito-footer button {
+  background-color: #db578c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.carrito-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.carrito-img {
+  width: 100px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.item-carrito {
+  display: flex;
+  align-items: center; /* Alinea imagen y texto al centro verticalmente */
+  gap: 10px;
+  margin-top: 10px;
+}

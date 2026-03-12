@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AF Dulces Momentos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!--iconos-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="carrito.css" />
+    <style>
+      .item-carrito {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .carrito-img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+      .card {
+        display: block;
+      }
+      .oculto {
+        display: none;
+      }
+    </style>
+  </head>
+  <div id="modalll" class="modal-overlay">
+    <div class="carrito-lateral">
+      <div class="carrito-header">
+        <h2>CARRITO</h2>
+        <button id="CloseModalll" class="close-btn">×</button>
+      </div>
+      <hr />
+      <ul id="lista-carrito"></ul>
+      <hr />
+      <p>
+        <strong>Total: $<span id="total">0</span></strong>
+      </p>
+      <hr />
+      <div class="carrito-footer">
+        <button>
+          <a id="iniciar-compra" href="facturacion y envio.html"
+            >Iniciar compra</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+  <body>
+    <div id="inicio"></div>
+
+    <main>
+      <!-- HEADER -->
+      <div class="div-1">
+        <a href="#slider"
+          ><img id="logo" src="Imagenes/logo AF.png" alt="logo"
+        /></a>
+        <nav>
+          <a class="usuario" href="login.html"
+            ><i class="fa-solid fa-user"></i
+          ></a>
+          <label class="unno">|</label>
+
+          <div class="carrito">
+            <button id="OpenModalll" class="carritoicon">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <span class="contador" id="contador-carrito">0</span>
+          </div>
+
+          <label class="doss">|</label>
+          <a class="coments" href="#coments"
+            ><i class="fa-solid fa-comments"></i
+          ></a>
+        </nav>
+
+        <input
+          class="buscar"
+          type="text"
+          id="filtro"
+          onkeyup="filtrar()"
+          placeholder="Buscar..."
+        />
+      </div>
+
+      <!-- NAV LINKS -->
+      <div class="div-2">
+        <a id="inicio" class="tab" href="#inicio"> Inicio </a>
+        <a id="productoss" class="tab" href="#productos"> Productos</a>
+        <a id="nosotros" class="tab" href="nosotros.html">Nosotros </a>
+        <a id="tuscompras" class="tab" href="mis compras.html"> Tus compras </a>
+      </div>
+      <!--aparicion al hacer scroll-->>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          //espera a que todo el contenido del html se
+          //se haya cargado completamente
+          const elements = document.querySelectorAll(".reveal"); //Selecciona todos los elementos que tengan la clase .reveal
+          //(estos son los que queremos que aparezcan al hacer scroll)
+          const observer = new IntersectionObserver( //// Crea un observador (IntersectionObserver) que "vigila" si
+            //          los elementos
+            //// entran o salen del área visible de la ventana (viewport)
+
+            (entries) => {
+              //'entries' es una lista con todos los
+
+              //elementos observados
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  //Si el elemento está visible
+
+                  //en el viewport...
+                  entry.target.classList.add("visible");
+                  // ...se le agrega la clase "visible"
+                  //(que suele activar una animación en CSS, como un fade-in o slide)
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.2 } //El 20% del elemento debe ser visible para activar la animación
+          );
+
+          elements.forEach((el) => observer.observe(el)); //Se "observa" cada elemento con clase .reveal
+        }); //Así, el observador sabrá cuándo aparecen en pantalla
+      </script>
+
+      <!-- SLIDER -->
+      <div id="slider" class="slider">
+        <ul>
+          <li>
+            <img width="1000" height="430" src="Imagenes/foto2.jpg" alt="" />
+          </li>
+          <li>
+            <img width="1000" height="430" src="Imagenes/foto4.jpg" alt="" />
+          </li>
+          <li>
+            <img width="1000" height="430" src="Imagenes/foto5.jpg" alt="" />
+          </li>
+          <li>
+            <img width="1000" height="430" src="Imagenes/c3.jpg" alt="" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Modal para elegir tamaño, cantidad y rellenos -->
+      <div id="customModal" class="custom-modal">
+        <div class="custom-modal-content">
+          <span id="closeCustomModal" class="close">&times;</span>
+          <h2 id="customProductName">Configurar Producto</h2>
+
+          <!-- Tamaño -->
+          <label for="tamano">Tamaño:</label>
+          <select id="tamano">
+            <option value="Grande">Grande (22cm - 10/12 porciones)</option>
+            <option value="Chico">Chico (18cm - 6/8 porciones)</option>
+          </select>
+
+          <!-- Cantidad -->
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" value="1" min="1" />
+
+          <!-- Rellenos -->
+
+          <summary>Seleccionar rellenos</summary>
+          <div class="rellenos-lista">
+            <label
+              ><input type="checkbox" value="Dulce de leche repostero" /> Dulce
+              de leche</label
+            >
+            <label><input type="checkbox" value="Crema" /> Crema</label>
+            <label><input type="checkbox" value="Frutilla" /> Frutilla</label>
+            <label><input type="checkbox" value="Chocolate" /> Chocolate</label>
+          </div>
+
+          <!-- Botón -->
+          <button id="confirmarProducto">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <!-- TIENDA -->
+      <div id="productos" class="productos">
+        <h3 class="productoss">Productos</h3>
+      </div>
+
+      <div class="contenedor">
+        <!-- Tarjetas principales -->
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=1"
+              ><img src="Imagenes/tofi.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Tarta Tofi</h5>
+          <p>$14.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=2"
+              ><img src="Imagenes/torta frutilla.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Torta Frutilla</h5>
+          <p>$20.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=3"
+              ><img src="Imagenes/torta chocolate.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Torta Chocolate</h5>
+          <p>$20.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=4"
+              ><img src="Imagenes/torta-river.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Torta Lamina</h5>
+          <p>$22.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=5"
+              ><img src="Imagenes/torta oreo.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Torta Oreo</h5>
+          <p>$24.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=6"
+              ><img src="Imagenes/tartamembrillo.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Tarta Membrillo</h5>
+          <p>$12.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=7"
+              ><img src="Imagenes/torta cerati.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Torta Lamina</h5>
+          <p>$22.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+        <div class="card reveal">
+          <div class="image-wrapper">
+            <a href="tarjeta.html?id=8"
+              ><img src="Imagenes/tarta frutila.jpeg" alt="chocotorta"
+            /></a>
+          </div>
+          <h5>Tarta Frutilla</h5>
+          <p>$15.000,00</p>
+          <button>Agregar al carrito</button>
+        </div>
+
+        <!-- Tarjetas extra -->
+        <input type="checkbox" id="btn" />
+        <div class="extra">
+          <div class="card reveal">
+            <div class="image-wrapper">
+              <a href="tarjeta.html?id=9"
+                ><img src="Imagenes/lemonpie.jpeg" alt="chocotorta"
+              /></a>
+            </div>
+            <h5>Tarta Lemon Pie</h5>
+            <p>$20.000,00</p>
+            <button>Agregar al carrito</button>
+          </div>
+          <div class="card reveal">
+            <div class="image-wrapper">
+              <a href="tarjeta.html?id=10"
+                ><img src="Imagenes/Tarta frutal.jpeg" alt="chocotorta"
+              /></a>
+            </div>
+            <h5>Tarta Frutal</h5>
+            <p>$15.000,00</p>
+            <button>Agregar al carrito</button>
+          </div>
+          <div class="card reveal">
+            <div class="image-wrapper">
+              <a href="tarjeta.html?id=11"
+                ><img src="Imagenes/fruti1.jpg" alt="chocotorta"
+              /></a>
+            </div>
+            <h5>Tarta de Frutilla</h5>
+            <p>$16.000,00</p>
+            <button>Agregar al carrito</button>
+          </div>
+          <div class="card reveal">
+            <div class="image-wrapper">
+              <a href="tarjeta.html?id=12"
+                ><img src="Imagenes/moka.jpeg" alt="chocotorta"
+              /></a>
+            </div>
+            <h5>Torta Moka</h5>
+            <p>$23.000,00</p>
+            <button>Agregar al carrito</button>
+          </div>
+          <div class="card reveal">
+            <div class="image-wrapper">
+              <a href="tarjeta.html?id=13"
+                ><img src="Imagenes/ricot.jpeg" alt="chocotorta"
+              /></a>
+            </div>
+            <h5>Tarta Ricota</h5>
+            <p>$12.000,00</p>
+            <button>Agregar al carrito</button>
+          </div>
+          <div class="card reveal">
+            <div class="image-wrapper">
+              <a href="tarjeta.html?id=14"
+                ><img src="Imagenes/chocotorta.jpeg" alt="chocotorta"
+              /></a>
+            </div>
+            <h5>Chocotorta</h5>
+            <p>$15.000,00</p>
+            <button>Agregar al carrito</button>
+          </div>
+        </div>
+
+        <!-- Botón ver más -->
+        <label id="label" for="btn"></label>
+      </div>
+
+      <!-- PREGUNTAS FRECUENTES -->
+      <div id="coments" class="comentarios">
+        <h1>Preguntas frecuentes</h1>
+      </div>
+      <div class="all-info reveal">
+        <div class="info">
+          <label class="texto">¿Cuáles son los medios de pago? </label>
+          <label class="texto2">
+            Los medios de pago disponibles son:
+            <ul>
+              <li>Transferencia bancaria</li>
+              <li>Tarjeta de crédito o débito</li>
+              <li>Efectivo (comunicarse con el dueño)</li>
+            </ul>
+          </label>
+        </div>
+        <div class="info">
+          <label class="texto">¿Cómo son los envíos? </label>
+          <label class="texto2">
+            Envíos disponibles a:
+            <ul>
+              <li>La Falda</li>
+              <li>Villa Giardino</li>
+              <li>Valle Hermoso</li>
+              <li>Huerta Grande</li>
+            </ul>
+          </label>
+        </div>
+        <div class="info">
+          <label class="texto">¿Cuál es el horario de atención? </label>
+          <label class="texto2">
+            Días y horarios de atención:
+            <ul>
+              <li>Lunes a Viernes</li>
+              <li>8 A.M hs a 18 P.M hs</li>
+            </ul>
+          </label>
+        </div>
+      </div>
+    </main>
+    <!--  Cierre correcto del main -->
+
+    <!-- FOOTER -->
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <h1 class="titulo-pie">NAVEGACION</h1>
+          <ul>
+            <li><a class="nav" href="#inicio"> Inicio </a></li>
+            <li><a class="nav" href="#productos"> Productos</a></li>
+            <li><a class="nav" href="nosotros.html">Nosotros </a></li>
+            <li><a class="nav" href="#">Tus compras</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h1 class="titulo-pie">CONTACTANOS</h1>
+          <a class="cont" href=""><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="cont" href="">+35 48 9089 -2176</a><br /><br />
+          <a class="cont" href=""><i class="fa-solid fa-location-dot"></i></a>
+          <a class="cont" href="">Villa Giardino Cordoba</a>
+        </div>
+        <div class="box">
+          <h1 class="titulo-pie">SEGUINOS EN</h1>
+          <a class="redes" href=""><i class="fa-brands fa-instagram"></i></a>
+          <a class="redes" href=""><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small class="uno">Copyright &copy; 2025 - All rights reserved. </small>
+        <small class="dos">Design: Olariaga Geraldine - Zartarian Rocio</small>
+        <a class="arriba" href="#inicio"> volver ↑</a>
+      </div>
+    </footer>
+
+    <!--FILTRADO (BUSCADOR)-->
+    <script>
+      //Función que se ejecuta cada vez que el usuario escribe o cambia el filtro
+
+      function filtrar() {
+        //Obtiene el texto que el usuario escribió en el input con id="filtro"
+        // y lo pasa a minúsculas para que la búsqueda no distinga mayúsculas/minúsculas
+
+        const filtro = document.getElementById("filtro").value.toLowerCase();
+        //Obtiene todas las tarjetas (o elementos) que se pueden filtrar
+        // En este caso, todas las que tienen la clase "card"
+        const items = document.getElementsByClassName("card");
+
+        //Recorre todos los elementos uno por uno
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+
+          // Obtiene todo el texto que contiene la tarjeta (nombre, descripción, etc.)
+          // y lo convierte también a minúsculas
+          const texto = item.textContent.toLowerCase();
+
+          //Si el texto de la tarjeta incluye lo que el usuario escribió...
+          if (texto.includes(filtro)) {
+            // ...se asegura de mostrarla (quita la clase "oculto")
+            item.classList.remove("oculto");
+          } else {
+            // ...si no coincide, la oculta agregándole la clase "oculto"
+            item.classList.add("oculto");
+          }
+        }
+      }
+    </script>
+  </body>
+  <script src="carrito.js"></script>
+</html>

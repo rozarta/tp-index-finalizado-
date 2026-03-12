@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos-AF Dulces Momentos</title>
+</head>
+<link rel="stylesheet" href="tarjeta_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="carrito.css">
+<body>
+     <main> 
+        <div class="div-1"><!--HEADER-->
+         <a href="Index.html"><img id="logo" src="Imagenes/logo AF.png" alt="logo"></a>      
+        <nav>
+        <a class="usuario" href="login.html"><i class="fa-solid fa-user"></i></a>
+        <label class="unno">|</label>
+
+        <div class="carrito">
+          <button id="OpenModalll" class="carritoicon"><i class="fa-solid fa-cart-shopping"></i></button>
+        <span class="contador" id="contador-carrito">0</span>
+        </div>
+        
+        <label class="doss">|</label>
+
+        <a class="coments" href="Index.html"><i class="fa-solid fa-comments"></i></a>
+
+        </nav>
+
+      
+    </div>
+    <div class="div-2">
+        <a id="inicio" class="tab" href="Index.html"> Inicio </a>
+        <a id="productoss" class="tab" href="Index.html"> Productos</a>
+        <a id="nosotros" class="tab" href="nosotros.html">Nosotros </a>
+        <a id="tuscompras" class="tab" href="mis compras.html"> Tus compras </a>
+    </div>
+
+    <!--carrito popup-->
+
+  <div id="modalll" class="modal-overlay">
+    <div class="carrito-lateral">
+      <div class="carrito-header">
+        <h2>CARRITO</h2>
+        <button id="CloseModalll" class="close-btn">×</button>
+      </div>
+      <hr>
+      <ul id="lista-carrito"></ul>
+      <hr>
+      <p><strong>Total: $<span id="total">0</span></strong></p>
+      <hr>
+      <div class="carrito-footer">
+        <button><a href="facturacion y envio.html">Iniciar compra</a></button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <div class="images-section">
+      <div class="image-top">
+        <div class="thumbnails">
+          <img id="imagen1" src="" onclick="changeMainImage(this.src)" />
+          <img id="imagen2" src="" onclick="changeMainImage(this.src)" />
+          <img id="imagen3" src="" onclick="changeMainImage(this.src)" />
+        </div>
+        <img class="main-image" id="main-image" src="" alt="Producto Principal"/>
+      </div><br><br>
+      <div class="social-icons">
+      <a class="redes1" href=""><i class="fa-brands fa-facebook-f"></i></a>
+      <a class="redes2" href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a class="redes3" href=""><i class="fa-brands fa-x-twitter"></i></a>
+      
+      </div><br>
+      <div id="descripcion" class="description1">
+       
+        
+        <div id="descripcion2" class="description2"><br>
+       
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="details">
+      <h1 id="titulo">TORTA TOFI</h1>
+      <div id="precio" class="price">$14.000</div>
+      <a class="pago" href=""><i class="fa-solid fa-credit-card"></i></a>
+      <a class="pago" href=""><i class="fa-brands fa-cc-visa"></i></a>
+      <a class="pago" href=""><i class="fa-brands fa-cc-mastercard"></i></a>
+       
+      <div id="info" class="payment-info"><br>5% de descuento pagando con Transferencia o depósito<br></div>
+
+      <button id="OpenModal" class="Abrir">VER MEDIOS DE PAGO</button>
+
+       <!--Popup medios de pago-->
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+           <a class="op">PAGOS PERSONALIZADOS</a>
+          <a class="op">MERCADO PAGO</a>
+          <button id="CloseModal" class="close-btn">×</button>
+        </div>
+        <div class="modal-body">
+          <div id="transferencia" class="payment-section active">
+            <h3>Transferencia Bancaria</h3>
+            <br>
+            <div class="payment-box">
+              <div class="details">
+                <i class="fa-regular fa-handshake"></i>
+                <br />
+                <p class="price-line">
+                  <span class="price-label">Total: </span>
+                  <span class="price">$14.000</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="mercado" class="payment-section">
+            <h3>Mercado pago</h3>
+            <br>
+            <div class="payment-box">
+              <div class="details">
+                <li class="tarj1">Tarjetas de débito:</li>
+                <br />
+                <i class="fa-solid fa-credit-card"></i>
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <br>
+                <br/>
+                <p class="price-line">
+                  <span class="price-label">Total: </span>
+                  <span class="price">$14.000</span>
+                  <br /><br>
+                </p>
+
+                <hr />
+                <br />
+                <li class="tarj2">Tarjetas de crédito:</li>
+                <br>
+                <p class="price-line">
+                  <span class="price-label2">Total en un pago: </span>
+                  <span class="price2">$14.000</span>
+                  <span class="price-label2">con todas las tarjetas. </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a id="CloseModall" href="#" class="back-link">VOLVER AL PRODUCTO</a>
+        </div>
+      </div>
+    </div>
+    <!--Java-->
+
+    <script>
+      //abrir y cerrar popup
+      let OpenModal = document.getElementById("OpenModal");
+      let modal = document.getElementById("modal");
+      let CloseModal = document.getElementById("CloseModal");
+      let CloseModall = document.getElementById("CloseModall");
+
+      //open modal
+
+      OpenModal.onclick = function () {
+        modal.style.visibility = "visible";
+        document.body.style.overflow = "hidden";//no scrollea con el popup abierto
+      };
+
+      //close modal btn
+      CloseModal.onclick = function () {
+        modal.style.visibility = "hidden";
+        document.body.style.overflow = "";//se esconde el popup y ahora si scrollea
+      };
+
+      CloseModall.onclick = function () {
+        modal.style.visibility = "hidden";
+        document.body.style.overflow = "";
+      };
+
+    //cambiar pagina segun lo que seleccionas
+      const opTransferencia = document.querySelectorAll(".op")[0];
+      const opMercado = document.querySelectorAll(".op")[1];
+      const seccionTransferencia = document.getElementById("transferencia");
+      const seccionMercado = document.getElementById("mercado");
+
+      opTransferencia.onclick = () => {
+        seccionTransferencia.classList.add("active");
+        seccionMercado.classList.remove("active");
+      };
+
+      opMercado.onclick = () => {
+        seccionMercado.classList.add("active");
+        seccionTransferencia.classList.remove("active");
+      };
+
+      // Marcar pestaña activa
+  function activarop(opActiva) {
+    document
+      .querySelectorAll(".op")
+      .forEach((op) => op.classList.remove("op-activa"));
+    opActiva.classList.add("op-activa");
+  }
+
+      opTransferencia.onclick = () => {
+        seccionTransferencia.classList.add("active");
+        seccionMercado.classList.remove("active");
+        activarop(opTransferencia);
+      };
+
+      opMercado.onclick = () => {
+        seccionMercado.classList.add("active");
+        seccionTransferencia.classList.remove("active");
+        activarop(opMercado);
+      };
+    </script>
+    
+      <br><br>
+        <hr>
+        <div class="select-wrapper"><br>
+        <label for="tamano">TAMAÑO:</label>
+        <select id="tamano">
+          <option>Grande (22cm - 10/12 porciones)</option>
+          <option>Chica (18cm - 6/8 porciones)</option>
+        </select>
+      </div>
+
+      <div class="select-wrapper">
+        <label for="cantidad">CANTIDAD</label>
+        <input type="number" id="cantidad" value="1" min="1">
+      </div>
+
+      <button class="btn" onclick="agregarAlCarrito('tarta tofi', 14000)">Agregar al carrito</button>
+
+      <div class="extra-info">
+        <strong> ✔ Compra protegida</strong>
+        Tus datos cuidados durante toda la compra.<br><br>
+        <strong>↺ Cambios y devoluciones</strong>
+        Si no te gusta, podés cambiarlo por otro o devolverlo.
+      </div>
+       
+    </div>
+  </div> 
+
+
+  
+ <!--footer-->
+     <footer class="pie-pagina">
+      <div class="grupo-1">
+
+        <div class="box"> <h1 class="titulo-pie">NAVEGACION</h1>
+          <ul>
+            <li><a class="nav" href="Index.html"> Inicio </a></li>
+            <li><a class="nav" href="Index.html"> Productos</a></li>
+            <li><a class="nav" href="nosotros.html">Nosotros </a></li>    
+            <li><a class="nav" href="#">Tus compras</a></li> 
+          </ul>
+      
+        </div>
+        <div class="box"><h1 class="titulo-pie">CONTACTANOS</h1>
+      <a class="cont" href=""><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="cont" href="">+35 48 9089 -2176</a><br><br>
+      <a class="cont" href="" ><i class="fa-solid fa-location-dot"></i></a>
+      <a class="cont" href="">Villa Giardino Cordoba</a>
+        </div>
+        <div class="box"> <h1 class="titulo-pie">SEGUINOS EN</h1>
+      <a class="redes" href=""><i class="fa-brands fa-instagram"></i></a>
+      <a class="redes" href=""><i class="fa-brands fa-tiktok"></i></a>
+        </div>    
+      </div>
+      <div class="grupo-2">
+        <small class="uno">Copyright &copy; 2025 - All rights reseved. </small>
+        <small class="dos"> Desing: Olariaga Geraldine - Zartarian Rocio</small>
+      </div>
+  </footer>
+
+  <script src="tarjetas.js"></script>
+  <script src="carrito.js"></script>
+
+
+</body>
+</html>

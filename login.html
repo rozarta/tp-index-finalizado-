@@ -1,0 +1,134 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión-AF Dulces Momentos</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <main> 
+
+    <a id="hola" href=""></a>
+        <div class="div-1"><!--HEADER-->
+         <a href="Index.html"><img id="logo" src="Imagenes/logo AF.png" alt="logo"></a>      
+        <nav>
+        <a class="usuario" href="login.html"><i class="fa-solid fa-user"></i></a>
+        <label class="unno">|</label>
+
+        <button id="OpenModal" class="carritoicon"><i class="fa-solid fa-cart-shopping"></i></button>
+        <label class="doss">|</label>
+
+        <a class="coments" href="Index.html"><i class="fa-solid fa-comments"></i></a>
+
+        </nav>      
+    </div>
+   <div class="div-2"> 
+  <a id="inicio" class="tab" href="Index.html"> Inicio </a> 
+  <a id="productoss" class="tab" href="Index.html"> Productos</a> 
+  <a id="nosotros" class="tab" href="nosotros.html">Nosotros </a> 
+  <a id="tuscompras" class="tab" href="mis compras.html"> Tus compras </a> 
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab"); // Selecciona todos los enlaces con clase "tab"
+
+  tabs.forEach((tab) => { // Recorre cada enlace/tab
+    tab.addEventListener("click", () => { // Escucha el click en cada tab
+      tabs.forEach((t) => t.classList.remove("tab-activa")); // Quita la clase activa a todos
+      tab.classList.add("tab-activa"); // Agrega la clase activa al tab clickeado
+    });
+  });
+</script>
+
+<button class="volver" type="button" onclick="history.back()" >⇽</button> <!-- Botón para volver a la página anterior -->
+<h1 class="titulo">Iniciar sesión</h1> 
+
+<!-- Formulario de inicio de sesión -->
+<form class="iniciar-sesion" action="procesar.php" method="POST"> <!-- Envía datos a index.php por método POST -->
+
+  <div class="nombre"> 
+    <label for="email">EMAIL</label> 
+    <input type="email" id="email" name="email" placeholder="ej.: tunombre@email.com" required> 
+  </div>
+
+  <div class="input-password"> 
+    <label for="password">CONTRASEÑA</label> 
+    <input type="password" id="clave" name="password" required /> 
+    <button type="button" class="ver" onclick="verClave()">👁</button> 
+  </div>
+
+  <script>
+    function verClave() { // Función para alternar entre mostrar y ocultar contraseña
+        let input = document.getElementById("clave"); // Obtiene el input de la contraseña
+        input.type = input.type === "password" ? "text" : "password"; // Cambia el tipo según el estado actual
+    }
+  </script>
+
+  <div class="olvido">
+    <a href="#">¿Olvidaste tu contraseña?</a> 
+  </div>
+
+  <button type="submit" class="boton">Iniciar sesión</button> 
+
+  <div class="texto-secundario">
+    ¿No tenés cuenta? <a href="registrarse.html">Crear cuenta</a> 
+  </div>
+</form>
+
+<script>
+  function togglePassword(id, icon) { // Función alternativa para mostrar/ocultar contraseña con ícono
+    const input = document.getElementById(id); // Obtiene el input por ID
+    if (input.type === "password") { // Si está oculto
+      input.type = "text"; // Muestra el texto
+      icon.classList.remove("fa-eye-slash"); // Cambia el ícono a ojo abierto
+      icon.classList.add("fa-eye");
+    } else { // Si está visible
+      input.type = "password"; // Lo oculta
+      icon.classList.remove("fa-eye"); // Cambia el ícono a ojo tachado
+      icon.classList.add("fa-eye-slash");
+    }
+  }
+</script>
+
+<!-- Footer de la página -->
+<footer class="pie-pagina"> 
+  <div class="grupo-1"> 
+
+    <div class="box">
+      <h1 class="titulo-pie">NAVEGACION</h1> 
+      <ul> 
+        <li><a class="nav" href="Index.html"> Inicio </a></li>
+        <li><a class="nav" href="Index.html"> Productos</a></li> 
+        <li><a class="nav" href="nosotros.html">Nosotros </a></li> 
+        <li><a class="nav" href="#">Tus compras</a></li> 
+      </ul>
+    </div>
+
+    <div class="box">
+      <h1 class="titulo-pie">CONTACTANOS</h1> 
+      <a class="cont" href=""><i class="fa-brands fa-whatsapp"></i></a> 
+      <a class="cont" href="">+35 48 9089 -2176</a><br><br> 
+      <a class="cont" href="" ><i class="fa-solid fa-location-dot"></i></a> 
+      <a class="cont" href="">Villa Giardino Cordoba</a> 
+    </div>
+
+    <div class="box">
+      <h1 class="titulo-pie">SEGUINOS EN</h1> 
+      <a class="redes" href=""><i class="fa-brands fa-instagram"></i></a> 
+      <a class="redes" href=""><i class="fa-brands fa-tiktok"></i></a> 
+    </div>
+  </div>
+
+  <div class="grupo-2"> 
+    <small class="uno">Copyright &copy; 2025 - All rights reseved. </small> 
+    <small class="dos"> Desing: Olariaga Geraldine - Zartarian Rocio</small> 
+    <a class="arriba" href="#hola"> volver ↑</a> 
+  </div>
+</footer>
+
+</body>
+</html>

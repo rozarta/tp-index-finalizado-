@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nosotros.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!--iconos-->
+<link rel="stylesheet" href="carrito.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--tipo de letra-->
+    <link rel="stylesheet" href="carrito.css">
+    <title>Nosotros-AF dulces momento</title>
+  </head>
+  <body>
+
+   <main> 
+        <div class="div-1"><!--HEADER-->
+         <a href="Index.html"><img id="logo" src="Imagenes/logo AF.png" alt="logo"></a>      
+        <nav>
+        <a class="usuario" href="login.html"><i class="fa-solid fa-user"></i></a>
+        <label class="unno">|</label>
+
+        <div class="carrito">
+          <button id="OpenModalll" class="carritoicon"><i class="fa-solid fa-cart-shopping"></i></button>
+        <span class="contador" id="contador-carrito">0</span>
+        </div>
+        
+        <label class="doss">|</label>
+
+        <a class="coments" href="Index.html"><i class="fa-solid fa-comments"></i></a>
+
+        </nav>
+
+        
+    </div>
+    <div class="div-2">
+        <a id="inicio" class="tab" href="Index.html"> Inicio </a>
+        <a id="productoss" class="tab" href="Index.html"> Productos</a>
+        <a id="nosotros" class="tab" href="#">Nosotros </a>
+        <a id="tuscompras" class="tab" href="mis compras.html"> Tus compras </a>
+</div>
+   <script>
+  const tabs = document.querySelectorAll(".tab");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("tab-activa"));
+      tab.classList.add("tab-activa");
+    });
+  });
+</script>
+
+
+ <!--carrito popup-->
+
+ <div id="modalll" class="modal-overlay">
+    <div class="carrito-lateral">
+      <div class="carrito-header">
+        <h2>CARRITO</h2>
+        <button id="CloseModalll" class="close-btn">×</button>
+      </div>
+      <hr>
+      <ul id="lista-carrito"></ul>
+      <hr>
+      <p><strong>Total: $<span id="total">0</span></strong></p>
+      <hr>
+      <div class="carrito-footer">
+       <button><a href="facturacion y envio.html">Iniciar compra</a></button>
+      </div>
+    </div>
+  </div>
+
+    <div class="encabezado-texto">
+      <h1 class="titulo">Sobre AF Dulces Momentos</h1>
+    <img src="Imagenes/ali.jpg" alt="" class="img" />  
+    </div>
+    
+    <br />
+    <div class="texto">
+         <p class="ho">Hola!!</p>
+         
+       <p class="nom">
+      Mi nombre es Alicia Furman, hace ya 10 años que me dedico a hacer pasteles
+      y poder alegrar a las personas con dulces momentos
+    </p>
+
+    <p class="en">
+      Los encuentros, momentos con amigos y familia es mi inspiración. Por eso
+      mi objetivo es que disfruten de comer los mejores productos dulces
+      artesanales dejando una huella para toda la vida.
+    </p>
+
+    <p class="co">
+      Cocino con los ingredientes de mejor calidad, amo los detalles y pongo
+      mucha pasión en lo que hago.
+    </p>
+
+    <p class="in">
+      Te invitamos a descubrir todos los sabores en nuestra tienda online...
+    </p> 
+    </div>
+    
+
+    <!--footer-->
+     <footer class="pie-pagina">
+      <div class="grupo-1">
+
+        <div class="box"> <h1 class="titulo-pie">NAVEGACION</h1>
+          <ul>
+            <li><a class="nav" href="Index.html"> Inicio </a></li>
+            <li><a class="nav" href="Index.html"> Productos</a></li>
+            <li><a class="nav" href="nosotros.html">Nosotros </a></li>    
+            <li><a class="nav" href="#">Tus compras</a></li> 
+          </ul>
+      
+        </div>
+        <div class="box"><h1 class="titulo-pie">CONTACTANOS</h1>
+      <a class="cont" href=""><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="cont" href="">+35 48 9089 -2176</a><br><br>
+      <a class="cont" href="" ><i class="fa-solid fa-location-dot"></i></a>
+      <a class="cont" href="">Villa Giardino Cordoba</a>
+        </div>
+        <div class="box"> <h1 class="titulo-pie">SEGUINOS EN</h1>
+      <a class="redes" href=""><i class="fa-brands fa-instagram"></i></a>
+      <a class="redes" href=""><i class="fa-brands fa-tiktok"></i></a>
+        </div>    
+      </div>
+      <div class="grupo-2">
+        <small class="uno">Copyright &copy; 2025 - All rights reseved. </small>
+        <small class="dos"> Desing: Olariaga Geraldine - Zartarian Rocio</small>
+      </div>
+  </footer>
+  <script src="carrito.js"></script>
+  </body>
+</html>

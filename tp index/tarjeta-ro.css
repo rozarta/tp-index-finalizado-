@@ -1,0 +1,818 @@
+
+body {
+  background-color: #fff1f8;
+  color: #000000;
+  position: relative;
+  font-family: sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.div-2,
+.div-1 {
+  height: 50px;
+}
+.div-1 {
+  /*encabezado superior*/
+  background-color: #ff77ad;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.div-1 input {
+  /*Buscador*/
+  padding: 7px;
+  width: 200px;
+  position: absolute;
+  top: 9px;
+  right: 190px;
+  background-color: #ffa4c8;
+  border-radius: 20px;
+  border: none;
+}
+.div-1 input:focus {
+  /*no funciona*/
+  border-color: transparent;
+}
+.div-1 .usuario {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 85px;
+  gap: 20px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.div-1 .carritoicon {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 140px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.div-1 .coments {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+
+.div-1 .unno {
+  /*separador |*/
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  right: 120px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.div-1 .doss {
+  /*separador |*/
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  right: 70px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.politica {
+  /*politica y privacidad*/
+  padding: 5px;
+  position: absolute;
+  left: 160px;
+  top: 16px;
+  font-size: 12px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-2 {
+  /*encabezado inferior*/
+  background-color: #ff4f95;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 50px;
+  position: sticky;
+  top: 50px;
+  z-index: 999;
+}
+.div-2 a {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: 0.3s ease;
+}
+
+.div-2 a:hover {
+  color: #ececec;
+  font-size: 1.4rem;
+  transform: translateY(-4px);
+}
+
+.tab-activa {
+  border-bottom: 1.8px solid rgb(255, 209, 227);
+  font-weight: bold;
+  color: #fff !important;
+}
+
+img#logo {
+  position: absolute;
+  margin-left: 40px;
+  max-height: 500%;
+  width: 110px;
+}
+
+
+.tarjeta {
+  /*para el titulo*/
+  width: 60%;
+  height: 60px;
+  padding: 2em;
+  
+  font-family: " sans-serif"; /*tipo de letra*/
+}
+h2#titulo {
+  /*para el titulo*/
+  font-size: 2rem;
+
+  font-family: " sans-serif"; /*tipo de letra*/
+  font-weight: 40;
+  color: #2c2c2c;
+  text-shadow: 2px 2px 2px rgba(31, 31, 31, 0.5);
+  margin-bottom: 0.5rem;
+}
+div#encabezado {
+  /*encabezado*/
+  background: linear-gradient(#ff77ad 50%, #ff4f95 50%);
+  height: 100px;
+}
+
+#menu_toggle {
+  /*para el primer  checkbox*/
+  display: none; /* Oculta el checkbox */
+  padding: 1000px;
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.menu_desplegable {
+  /*para el primer  checkbox*/
+  background-color: #fdebf2;
+  width: 500px;
+  height: 350px;
+  position: absolute;
+  margin-top: -100%; /* Oculta fuera de la pantalla */
+  display: block;
+}
+
+#menu_toggle:checked ~ .menu_desplegable {
+  /*para el primer  checkbox*/
+  /*para el checkbox*/
+  margin-top: 0; /* Muestra el menú al marcar el checkbox 
+  width: 200px;
+  height: 300px;*/
+  display: block;
+}
+
+.menu_desplegable ul {
+  /*para el primer  checkbox*/
+  background-color: #ffbbd6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.menu_desplegable li {
+  /*para el  primer checkbox*/
+  padding: 100px;
+  border-bottom: 1px solid #f70f0f;
+}
+
+.menu_desplegable li:last-child {
+  /*para el primer  checkbox*/
+  border-bottom: none;
+}
+
+.menu_desplegable a {
+  /*para el primer checkbox*/
+  text-decoration: none;
+  color: #333;
+}
+
+.mp {
+  /*para el primer checkbox*/
+  color: #ffffff;
+  font-size: 20px;
+  width: 500px;
+  height: 30px;
+
+  background-color: #ff77ad;
+  border-radius: 10px;
+  margin-top: 20px;
+  left: 80%;
+  display: flex;
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+}
+.todo2 {
+  margin-left: 15px;
+}
+#menu_toggle2 {
+  /*para el segundo checkbox*/
+  display: none; /* Oculta el checkbox */
+  padding: 1000px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.menu_desplegable2 {
+  /*para el segundo checkbox*/
+  background-color: #fdebf2;
+  width: 500px;
+  height: 350px;
+  position: absolute;
+  margin-top: -100%; /* Oculta fuera de la pantalla */
+  display: block;
+}
+
+#menu_toggle2:checked ~ .menu_desplegable2 {
+  /*para el segundo checkbox*/
+  margin-top: 0; /* Muestra el menú al marcar el checkbox 
+  width: 200px;
+  height: 300px;*/
+  display: block;
+}
+
+.menu_desplegable2 ul {
+  /*para el segundo checkbox*/
+  background-color: #ffbbd6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.menu_desplegable2 li {
+  /*para el segundo checkbox*/
+  padding: 100px;
+  border-bottom: 1px solid #f70f0f;
+}
+
+.menu_desplegable2 li:last-child {
+  /*para el segundo checkbox*/
+  border-bottom: none;
+}
+
+.menu_desplegable2 a {
+  /*para el segundo checkbox*/
+  text-decoration: none;
+  color: #333;
+}
+.mp2 {
+  /*para el segundo checkbox*/
+  color: #ffffff;
+  font-size: 20px;
+  width: 500px;
+  height: 30px;
+
+  background-color: #ff77ad;
+  border-radius: 10px;
+  margin-top: 20px;
+  left: 80%;
+  display: flex;
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+}
+.todo3 {
+  margin-left: 15px;
+}
+#menu_toggle3 {
+  /*para el tercer checkbox*/
+  display: none; /* Oculta el checkbox */
+  padding: 1000px;
+  box-shadow: 0px 8px 16px 0px rgb(248, 165, 165);
+}
+.menu_desplegable3 {
+  /*para el tercer checkbox*/
+  background-color: #fdebf2;
+  width: 500px;
+  height: 350px;
+  position: absolute;
+  margin-top: -100%; /* Oculta fuera de la pantalla */
+  display: block;
+}
+
+#menu_toggle3:checked ~ .menu_desplegable3 {
+  /*para el tercer checkbox*/
+  margin-top: 0; /* Muestra el menú al marcar el checkbox 
+  width: 200px;
+  height: 300px;*/
+  display: block;
+}
+
+.menu_desplegable3 ul {
+  /*para el tercer checkbox*/
+  background-color: #ffbbd6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.menu_desplegable3 li {
+  /*para el tercer checkbox*/
+  padding: 100px;
+
+  border-bottom: 1px solid #ff6f6f;
+}
+
+.menu_desplegable3 li:last-child {
+  /*para el tercer checkbox*/
+  border-bottom: none;
+}
+
+.menu_desplegable3 a {
+  /*para el tercer checkbox*/
+  text-decoration: none;
+  color: #333;
+}
+.mp3 {
+  /*para el tercer checkbox*/
+  color: #ffffff;
+  font-size: 20px;
+  width: 500px;
+  height: 30px;
+
+  background-color: #ff77ad;
+  border-radius: 10px;
+  margin-top: 20px;
+  left: 80%;
+  display: flex;
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+}
+.todofoto {
+  /*el cuadrado que encuadra a la foto y al boton comprar*/
+  position: absolute;
+  top: 5px; /* Desplaza 20 píxeles desde el borde superior */
+  right: 30px;
+  width: 880px;
+  height: 550px;
+  margin-top: 200px;
+  background-color: #f18bb4;
+
+  border-radius: 1rem;
+  flex-direction: row;
+}
+/* la foto de lo que compraste*/
+.fot {
+  border-radius: 1rem;
+  margin: 50px;
+  display: flex;
+
+  gap: 20px;
+}
+.pretarta1 {
+  margin-left: 100px;
+}
+.fot2 {
+  border-radius: 1rem;
+  margin: 50px;
+  display: flex;
+
+  gap: 20px;
+}
+
+.bu {
+  /*boton de comprar*/
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  top: 450px; /* Desplaza 20 píxeles desde el borde superior */
+  right: 380px;
+  margin-top: 20px;
+
+  font-size: 30px;
+  align-items: center;
+  background-color: #ffbbd6;
+  display: flex;
+  border-radius: 10px;
+  border: none;
+}
+label#leb {
+  /*para la letra de cada checkbox*/
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+input#r {
+  /*para todos los input con el id r. para cambiar color o poer efecto*/
+  background-color: #ffbbd6;
+  justify-content: center;
+  height: 25px;
+  border-radius: 12px;
+  border: none;
+  display: block;
+  font-size: 40px;
+}
+.confirm-button button:hover {
+  /*efectos del boton siguiente*/
+  transform: translateY(-4px);
+  background-color: #ff77ad;
+}
+
+.group {
+  /*no tengo ni idea que es pero sirve para el efecto*/
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+.input {
+  /*no tengo ni idea que es pero sirve para el efecto*/
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #1212c7;
+  color: #9997c0;
+  transition: 0.3s ease;
+}
+
+/**/
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.container i{
+  color: #c55f81;
+}
+
+.form-section {
+    width: 100%;
+  flex: 2;
+  padding: 40px;
+  background-color: #fff0f6;
+}
+
+.form-section h1 {
+  color: #d65784;
+  margin-bottom: 20px;
+}
+
+.payment-method {
+  background-color: #ffe3ec;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #ffb3c9;
+  transition: background 0.3s ease;
+}
+
+.payment-method:hover {
+  background-color: #ffc9da;
+}
+
+.payment-form {
+  display: none;
+  background-color: #fff7fa;
+  padding: 20px;
+  border-left: 4px solid #f78ab4;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #e6c1d0;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row input {
+  flex: 1;
+}
+
+.confirm-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  background-color: #ff80a4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: #e4688b;
+}
+
+/**/
+.summary-section {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff9fc;
+  border-left: 2px dashed #ffcce0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.summary-section h2 {
+  color: #b9446b;
+  margin-bottom: 20px;
+}
+
+.order-box {
+  background-color: #ffeef4;
+  border: 2px solid #ffbdd2;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 190, 220, 0.3);
+  width: 300px; /*controla el tamaño de el cuadrado donde estan las fotos*/
+}
+
+.order-box p {
+  display: flex;
+}
+
+.order-box .total {
+  font-size: 18px;
+  color: #a03656;
+}
+
+hr {
+  margin: 40px 0;
+
+  border: none;
+  border-top: 1px dashed #e6a6b8;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .summary-section {
+    border-left: none;
+    border-top: 2px dashed #ffcce0;
+  }
+}
+
+.r::placeholder {
+  /*no tengo ni idea que es,pero sirve para el efecto*/
+  color: #9e9ea7;
+}
+
+.r:focus,
+input:hover {
+  /*no tengo ni idea que es,pero sirve para el efecto*/ /*hover pasarle por arriba/ focus al apretar*/
+  outline: none;
+  border-color: rgba(255, 62, 181, 0.4);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px rgb(247, 162, 214);
+}
+.circulo1 {
+  position: relative; /* Contenedor relativo para posicionar el círculo encima */
+  display: inline-block;
+}
+
+.img1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Hace la imagen circular (opcional) */
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+}
+.numero1 {
+  position: absolute;
+  top: -1px; /* Ajusta la posición vertical del círculo */
+  right: -5px; /* Ajusta la posición horizontal del círculo */
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 245, 245);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 50%; /* Hace el círculo redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.producto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.info-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.torrr {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.pretarta {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+}
+.canti {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+.tama {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+
+.circulo2 {
+  position: relative; /* Contenedor relativo para posicionar el círculo encima */
+  display: inline-block;
+}
+.img2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Hace la imagen circular (opcional) */
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+}
+.numero2 {
+  position: absolute;
+  top: -1px; /* Ajusta la posición vertical del círculo */
+  right: -5px; /* Ajusta la posición horizontal del círculo */
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 245, 245);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 50%; /* Hace el círculo redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.producto2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.info-producto2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.torrr2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.pretarta2 {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+}
+.canti2 {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+.tama2 {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+.ico-resu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #c55f81;
+}
+
+
+/*footer*/
+
+.pie-pagina {
+  background-color: #ffd4e5; /*color fondo del div*/
+  width: 100%;
+
+}
+
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 200px; /*separador del contenido*/
+  padding: 10px 30px; /*separador del margen*/
+  justify-content: center; /*centrar contenido*/
+}
+
+.pie-pagina .grupo-1 .titulo-pie {
+  color: black;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.pie-pagina .grupo-1 .nav {
+  display: flex;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 22px;
+  line-height: 10px;
+  transition: 0.3s ease;
+}
+.pie-pagina .grupo-1 ul{
+  color: #000000;
+}
+.pie-pagina .grupo-1 .nav:hover {
+  color: #ff4f95;
+}
+
+.pie-pagina .grupo-1 .cont {
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 15px;
+  height: 22px;
+  line-height: 10px;
+  transition: 0.3 ease;
+}
+.pie-pagina .grupo-1 .cont:hover {
+  color: #ff4f95;
+  font-size: 1rem;
+  transform: translateY(-4px);
+}
+
+.pie-pagina .grupo-1 .redes {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 25px;
+  height: 22px;
+  line-height: 10px;
+  margin-left: 17px;
+  transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .redes:hover {
+  color: #ff4f95;
+}
+
+.pie-pagina .grupo-2 {
+  background-color: #ff92bf;
+  padding: 15px 10px;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}

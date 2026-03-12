@@ -1,0 +1,417 @@
+.div-1 .carritoicon {
+  position: absolute; /*para posicionar un elemento de forma exacta*/
+  cursor: pointer;
+  padding: 5px; /*dar espacio interno dentro de un elemento*/
+  top: 10px;
+  right: 140px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+  background-color: transparent;
+  border: none; /*no tienen ningun borde visible*/
+}
+.contador {
+  top: 6px;
+  right: 140px;
+  position: absolute;
+  background-color: #ff4f95;
+  color: white;
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold; /*texto mas negrito*/
+  display: none; /* Oculto cuando está en 0 */
+}
+
+/*carrito popup*/
+
+/* el cuadrado que engloba el carrito */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /*ancho*/
+  height: 100vh; /*alto*/
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden; /*oculta el elemento pero mantiene su espacio en la pagina*/
+  z-index: 9999; /*controla que el elemento se muestre por encima o debajo de otro*/
+}
+
+/* Panel del carrito lateral */
+.carrito-lateral {
+  position: absolute;
+  border-radius: 17px;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #fff;
+  border-left: 2px dashed #ffc9db;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2); /*sombras al elemento*/
+}
+
+/* Encabezado: título + X */
+
+.carrito-header h2 {
+  margin: 0; /*espadio afuera del elemento*/
+  font-size: 24px;
+  color: #a65c73;
+}
+
+.close-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a65c73;
+}
+
+/* Lista de productos */
+.carrito-lateral ul {
+  list-style: none;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+/*icono de eliminar/diseño*/
+.eliminar {
+  cursor: pointer;
+  margin-left: 4em;
+
+  color: #ff4f95;
+
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/* Total diseño*/
+.carrito-lateral p {
+  font-size: 18px;
+  margin: 0;
+  color: #a65c73;
+}
+
+/* Footer: Confirmar Pedido centrado abajo(el lugar) */
+.carrito-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+/*diseño del boton(iniciar compra)*/
+.carrito-footer button {
+  background-color: #db578c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer; /*cambia el cursos al pasar por un elemento*/
+}
+/*el enlace del boton*/
+.carrito-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*separacion entre cada elemento dentro del carrito*/
+.item-carrito {
+  padding: 10px 0;
+}
+
+/*para el tamaño de la foto*/
+.carrito-img {
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 10px;
+  object-fit: cover;
+}
+/*diseño del nombre de los productos en el carrito*/
+.carrito-info .nombre {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+}
+/*diseño del precio de los productos en el carrito*/
+.carrito-info .precio {
+  font-size: 18px;
+  color: #ff4f95;
+  margin: 3px 0;
+}
+/*diseño de la cantidad de los productos en el carrito*/
+.cantidad-control {
+  margin-bottom: 8px;
+}
+
+/*nuevo*/
+/*el item carrito dejalo asi*/
+.item-carrito {
+  display: flex;
+}
+/*diseño de la cantidad(creo )*/
+.item-carrito input[type="number"] {
+  width: 60px;
+  padding: 3px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  color: #ff589b;
+  border: 2px solid #db578c;
+  background-color: #ffe6f0;
+}
+
+/* Fondo oscuro(popup) */
+.custom-modal {
+  display: none; /* oculto al inicio */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* popup antes del carrito */
+.custom-modal-content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+}
+
+/* Botón cerrar() */
+.custom-modal .close {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  color: #ff4f95;
+}
+
+/*diseño del tamaño(popup)*/
+.custom-modal-content select, /*selecciona elementos dentro del modal de tipo numero*/
+.custom-modal-content input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #db578c;
+  background-color: #ffe6f0;
+  color: #ff589b; /* número rosa */
+  border-radius: 6px;
+  margin-top: 5px;
+}
+/*diseño rellenos(popup)*/
+.rellenos-lista {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Botón diseño(popup)*/
+#confirmarProducto {
+  background: #db578c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/*efecto del boton del popup*/
+#confirmarProducto:hover {
+  background: #b94870;
+}
+
+/**/
+/* --- Alinear título 'Seleccionar rellenos' con los checks --- */
+
+/* Quitamos el marcador nativo y usamos uno propio con ancho fijo */
+
+/* Hacemos que la lista entre con la misma sangría de la flecha */
+
+/* Aseguramos la alineación de cada ítem (check y texto del relleno en popup) */
+.rellenos-lista label {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espacio entre el check y el texto */
+  font-size: 14px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Forzamos a que los inputs se vean y queden del lado izquierdo sin desplazarse (popup rellenos)*/
+.rellenos-lista input[type="checkbox"],
+.rellenos-lista input[type="radio"] {
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+  width: 18px;
+  height: 18px;
+  accent-color: #db578c;
+  margin: 0; /* sin margen extra */
+  flex-shrink: 0;
+}
+/*diseño del cantidad de tarjetas individuales*/
+#cantidad {
+  appearance: textfield; /* quitamos estilo nativo */
+  -webkit-appearance: textfield; /*controla el estilo del input*/
+  -moz-appearance: textfield;
+  background: #ffe6f0; /* fondo rosita */
+  color: #ff589b; /* número rosa */
+  border: 2px solid #db578c;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Forzar a que los checkboxes se vean en el carrito */
+.check-compra {
+  display: inline-block !important; /* aseguramos que no esté oculto */
+  width: 15px; /* tamaño más visible */
+  height: 15px;
+  transform: scale(1.3); /* agranda */
+  accent-color: #ff4f95; /* color rosa */
+  margin-right: 10px; /* espacio respecto a la imagen */
+}
+
+/*la ubicacion de los rellenos en el carrito*/
+.carrito-detalle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/*no se que hace pero no sacar ya que cambia las cosas de lugar*/
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*nombre?*/
+.carrito-header .nombre {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+/*eliminar?*/
+.carrito-header .eliminar {
+  color: #db578c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.separador {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+/*esto es el "diseño" de los check de los rellenos en carrito*/
+.relleno-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin: 2px 0;
+}
+
+/* --- FIX DEFINITIVO para alineación de checkboxes en el carrito del Index --- */
+
+/* Contenedor general de los rellenos dentro del carrito(diseño) */
+.carrito-lateral .rellenos-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+  padding-left: 10px; /* agrega una sangría leve */
+}
+
+/* Cada fila (checkbox + texto) */
+.carrito-lateral .relleno-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400; /*definir grosor o intensidad de las letras*/
+  line-height: 1.2; /*altura de cada linea*/
+  margin-left: 4px; /* empuja un poco el texto para igualar */
+}
+
+/* Checkbox visible y con color rosado */
+/*no tocar modifica todo*/
+.carrito-lateral input[type="checkbox"].check-compra {
+  appearance: auto !important;
+  -webkit-appearance: checkbox !important;
+  -moz-appearance: checkbox !important;
+  accent-color: #db578c;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Título "Rellenos:" */
+.carrito-lateral .rellenos-titulo {
+  font-weight: 600;
+  color: #a65c73;
+  margin-bottom: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+/**/
+/* --- TITULO DEL GRUPO (parecido a un <select>) --- */
+.grupo-acordeon-titulo {
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  font-size: 14px;
+  background: #f7e6f1; /* rosita suave */
+  border: none;
+  color: #b83d78; /* rosa fuerte */
+  font-weight: bold;
+  border-radius: 6px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+/* --- CONTENEDOR QUE SE ABRE Y CIERRA --- */
+.grupo-acordeon-contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  padding-left: 12px; /* indenta un poco los rellenos */
+}
+
+/* Cuando abre */
+.grupo-acordeon-contenido.mostrar {
+  max-height: 300px; /* suficiente para que entren los rellenos sin hacer gigante el popup */
+}
+
+/* --- ITEMS DE LOS RELLENOS --- */
+.relleno-item {
+  display: block;
+  margin: 4px 0;
+  font-size: 14px;
+}

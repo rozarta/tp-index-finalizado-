@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizacion de pago- AF Dulces Momentos</title>
+    <link rel="stylesheet" href="finalizacion-de-pago.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!--para los iconos-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="carrito.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+     <main> 
+
+      <a id="hola" href=""></a>
+        <div class="div-1"><!--HEADER-->
+         <a href="Index.html"><img id="logo" src="Imagenes/logo AF.png" alt="logo"></a>      
+        <nav>
+        <a class="usuario" href="login.html"><i class="fa-solid fa-user"></i></a>
+        <label class="unno">|</label>
+
+        <div class="carrito">
+          <button id="OpenModalll" class="carritoicon"><i class="fa-solid fa-cart-shopping"></i></button>
+        <span class="contador" id="contador-carrito">0</span>
+        </div>
+        
+        <label class="doss">|</label>
+
+        <a class="coments" href="Index.html"><i class="fa-solid fa-comments"></i></a>
+
+        </nav>
+
+      
+    </div>
+    <div class="div-2">
+        <a id="inicio" class="tab" href="Index.html"> Inicio </a>
+        <a id="productoss" class="tab" href="Index.html"> Productos</a>
+        <a id="nosotros" class="tab" href="nosotros.html">Nosotros </a>
+        <a id="tuscompras" class="tab" href="mis compras.html"> Tus compras </a>
+    </div>
+   <script>
+  const tabs = document.querySelectorAll(".tab");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("tab-activa"));
+      tab.classList.add("tab-activa");
+    });
+  });
+</script>
+
+
+    <div class="section">
+      <div class="ico-info">
+        <a href="facturacion y envio.html">
+          <i class="fa-solid fa-chevron-left"></i
+        ></a>
+      </div>
+      <div class="ico-info2">
+        <a href="facturacion y envio.html">
+          <i class="fa-solid fa-chevron-left"></i
+        ></a>
+
+      <br />
+    </div>
+
+    <main class="container">
+      <div class="ico-resu">
+           <i class="fa-solid fa-circle" ></i>
+         <h1>Resumen de Compra</h1>
+          <i class="fa-solid fa-circle"></i>
+      </div>
+      
+
+      <div class="section">
+        <div class="ico-info">
+          <a href="facturacion y envio.html">
+          <i class="fa-solid fa-chevron-left"></i></a>
+          <br />
+
+          <h2>Información del Cliente</h2>
+        </div>
+
+        <div class="row">
+          <span>Nombre y Apellido:</span> <span>Sofía Martínez</span>
+        </div>
+        <div class="row"><span>Calle:</span> <span>A.v san martin</span></div>
+        <div class="row"><span>Nro. de casa:</span> <span> 129 </span></div>
+        <div class="row"><span>Ciudad:</span> <span>La Falda</span></div>
+        <div class="row"><span>Codigo postal:</span> <span>5172</span></div>
+        <div class="row">
+          <span>Teléfono:</span> <span>+54 3548 564813</span>
+        </div>
+      </div>
+
+      <div class="section">
+         
+        <div class="ico-info2">
+          <a href="tarjeta-ro.html">
+          <i class="fa-solid fa-chevron-left"></i></a>
+          <br />
+
+            <h2>Tarjeta de Pago</h2>
+        </div>
+      
+        <p>Tarjeta de Debito:</p>
+        <div class="row">
+          <span>Numero de la tarjeta:</span> <span>1594 3652 7845 2648</span>
+        </div>
+        <div class="row">
+          <span>Titular de la tarjeta:</span> <span>Sofia Martinez</span>
+        </div>
+        <div class="row">
+          <span>Vencimiento(MM/AA):</span> <span>13/25</span>
+        </div>
+        <div class="row"><span>CVV:</span> <span>569</span></div>
+        <div class="row">
+          <span>DNI del titular:</span> <span>22.956.225</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Pedidos</h2>
+       <div id="order-box"></div>
+
+      </div>
+
+      <div class="section total">
+        <div class="row"><strong>Total:</strong> <strong></strong></div>
+      </div>
+
+      <button class="confirm-btn">Confirmar Pedido</button>
+    </main>
+
+          <!--footer-->
+     <footer class="pie-pagina">
+      <div class="grupo-1">
+
+        <div class="box"> <h1 class="titulo-pie">NAVEGACION</h1>
+          <ul>
+            <li><a class="nav" href="Index.html"> Inicio </a></li>
+            <li><a class="nav" href="Index.html"> Productos</a></li>
+            <li><a class="nav" href="nosotros.html">Nosotros </a></li>    
+            <li><a class="nav" href="#">Tus compras</a></li> 
+          </ul>
+      
+        </div>
+        <div class="box"><h1 class="titulo-pie">CONTACTANOS</h1>
+      <a class="cont" href=""><i class="fa-brands fa-whats  app"></i></a>
+      <a class="cont" href="">+35 48 9089 -2176</a><br><br>
+      <a class="cont" href="" ><i class="fa-solid fa-location-dot"></i></a>
+      <a class="cont" href="">Villa Giardino Cordoba</a>
+        </div>
+        <div class="box"> <h1 class="titulo-pie">SEGUINOS EN</h1>
+      <a class="redes" href=""><i class="fa-brands fa-instagram"></i></a>
+      <a class="redes" href=""><i class="fa-brands fa-tiktok"></i></a>
+        </div>    
+      </div>
+      <div class="grupo-2">
+        <small class="uno">Copyright &copy; 2025 - All rights reseved. </small>
+        <small class="dos"> Desing: Olariaga Geraldine - Zartarian Rocio</small>
+        <a class="arriba"href="#hola"> volver ↑</a>
+      </div>
+  </footer>
+
+  <div class="popup-overlay" id="popupGracias">
+  <div class="popup">
+    <h2>¡Gracias por tu compra! </h2>
+    <p>Tu pedido fue realizado con éxito.</p>
+    <a href="Index.html">
+      <button class="volver-btn">Volver al inicio</button>
+    </a>
+  </div>
+</div>
+
+
+  <script>
+  const botonConfirmar = document.querySelector(".confirm-btn");
+
+  botonConfirmar.addEventListener("click", function () {
+    const popup = document.getElementById("popupGracias");
+    popup.style.display = "flex";
+  });
+  </script>
+
+
+  </div>
+</div>
+
+  </body>  <script src="finalizacion-de-pago.js"></script>
+</html>

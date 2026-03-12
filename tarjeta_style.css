@@ -1,0 +1,727 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #fff1f8;
+  font-family: sans-serif;
+  position: relative;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.div-2,
+.div-1 {
+  height: 50px;
+}
+.div-1 {
+  /*encabezado superior*/
+  background-color: #ff77ad;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.div-1 input {
+  /*Buscador*/
+  padding: 7px;
+  width: 200px;
+  position: absolute;
+  top: 9px;
+  right: 190px;
+  background-color: #ffa4c8;
+  border-radius: 20px;
+  border: none;
+}
+.div-1 input:focus {
+  /*no funciona*/
+  border-color: transparent;
+}
+.div-1 .usuario {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 85px;
+  gap: 20px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+
+.div-1 .coments {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+
+.div-1 .unno {
+  /*separador |*/
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  right: 120px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.div-1 .doss {
+  /*separador |*/
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  right: 70px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.politica {
+  /*politica y privacidad*/
+  padding: 5px;
+  position: absolute;
+  left: 160px;
+  top: 16px;
+  font-size: 12px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-2 {
+  /*encabezado inferior*/
+  background-color: #ff4f95;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 50px;
+  position: sticky;
+  top: 50px;
+  z-index: 999;
+}
+.div-2 a {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: 0.3s ease;
+}
+
+.div-2 a:hover {
+  color: #ececec;
+  font-size: 1.4rem;
+  transform: translateY(-4px);
+}
+
+.tab-activa {
+  border-bottom: 1.8px solid rgb(255, 209, 227);
+  font-weight: bold;
+  color: #fff !important;
+}
+
+img#logo {
+  position: absolute;
+  margin-left: 40px;
+  max-height: 500%;
+  width: 110px;
+}
+
+.container {
+  padding: 30px;
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.images-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 1rem;
+}
+
+.image-top {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnails img:hover {
+  border: 2px solid #3483fa;
+}
+
+.main-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.description1 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 350;
+}
+.description2 {
+  font-weight: 350;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.titulo-comp {
+  font-size: 20px;
+  font-weight: 500;
+}
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 150px;
+  margin-top: -50px;
+}
+.redes1 {
+  margin-left: 85px;
+  font-size: 1.2em;
+  color: #000;
+}
+.redes2 {
+  margin-left: 5px;
+  font-size: 1.2em;
+  color: #000;
+}
+.redes3 {
+  margin-left: -75px;
+  font-size: 1.2em;
+  color: #000;
+}
+
+.details {
+  flex: 1;
+}
+
+.Abrir {
+  all: unset;
+  cursor: pointer;
+  color: #ff5099;
+  font-weight: 500;
+  text-decoration: underline;
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #2c2c2c;
+  font-family: "Montserrat", sans-serif;
+}
+.descuento {
+  font-size: 15px;
+  color: #ff74ac;
+  margin-bottom: 300px;
+}
+hr {
+  color: #474747;
+  opacity: 50%;
+  height: 1px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 550;
+  color: #1f1f1f;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.payment-info {
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.pago {
+  color: #313131;
+  font-size: 20px;
+}
+.select-wrapper {
+  margin-bottom: 20px;
+  width: 100px;
+}
+.select {
+  padding: 8px;
+  width: 100px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+select#tamano {
+  padding: 8px;
+  width: 300px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 450;
+}
+input[type="number"] {
+  padding: 8px;
+  width: 80px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 450;
+}
+.btn {
+  background-color: #ffc6de;
+  color: #161616;
+  padding: 12px;
+  border: none;
+  width: 43em;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.extra-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.extra-info strong {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/*Popup medios de pago*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo gris semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 600px;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.op {
+  margin-right: 15px;
+  color: #ff91bd;
+  cursor: pointer;
+  font-weight: 500;
+}
+.op:hover {
+  text-decoration: underline 2px;
+}
+.op.op-activa {
+  font-weight: bold;
+  text-decoration: underline 2px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-body {
+  margin-top: 20px;
+}
+
+/*Mostrar al que esta activo y al otro esconderlo*/
+.payment-section {
+  display: none;
+}
+
+.payment-section.active {
+  display: block;
+}
+
+.modal-body h3 {
+  font-weight: 550;
+}
+
+.payment-box {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #eee;
+  padding: 15px;
+  background: #fff4f8;
+  border-radius: 5px;
+}
+.tarj1 {
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: underline 1px;
+}
+.tarj2 {
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: underline 1px;
+}
+i {
+  color: #414141;
+}
+hr {
+  width: 165%;
+}
+.details .price-label {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.details .price-label2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.details .price {
+  font-size: 23px;
+  font-weight: 550;
+  margin: 5px 0;
+}
+.details .price2 {
+  font-size: 17px;
+  font-weight: 550;
+  margin: 5px 0;
+}
+
+.note {
+  color: #555;
+  font-size: 14px;
+}
+
+.modal-footer {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.back-link {
+  color: #ff91bd;
+  text-decoration: none;
+  font-weight: 500;
+}
+.back-link:hover {
+  text-decoration: underline 2px;
+}
+i {
+  font-size: 20px;
+}
+
+.morep {
+  background-color: #ffd1e4;
+  width: 30.2em;
+  height: 140px;
+  margin-left: -15em;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-align: center;
+  font-size: 3em;
+}
+.morep h3 {
+  font-weight: 300;
+  margin-left: 2em;
+}
+.morep a:hover {
+  color: #9c9c9c;
+}
+
+.opciones {
+  overflow: hidden;
+  position: relative;
+  display: grid; /* Convierte este elemento en un contenedor de CSS Grid */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Define 3 columnas iguales (1fr = una fracción del espacio disponible) */
+  gap: 1rem; /* Espacio de 2rem entre filas y columnas de la rejilla */
+  width: 80em; /* Espacio interior de 2rem alrededor de todo el contenido */
+  /* Ancho máximo del contenedor (no crecerá más allá de 1200px) */
+  row-gap: 0.1rem;
+  margin-left: -37em; /* Centra el contenedor horizontalmente (0 arriba/abajo, auto a los lados) */
+  grid-column: 1 / -1;
+}
+.cartas {
+  background-color: transparent; /* Fondo muy oscuro para la tarjeta */
+  color: #fff; /* Color de texto blanco */
+  width: 100%; /* Ocupa el 100% del ancho de su columna en la rejilla */
+  padding: 1rem; /* Espacio interior de 1.2rem en todos los lados */
+  text-align: center; /* Centra el texto dentro de la tarjeta */
+  /* Convierte la tarjeta en contenedor flex para su contenido */
+  flex-direction: column; /* Alinea hijos (img, h5, p, button) en columna */
+  transition: 0.6s ease; /* Transición suave de 0.6s para propiedades animables */
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 450px;
+}
+.image-wrapper {
+  width: 280px;
+  height: 290px; /* altura fija o dinámica, según tu diseño */
+  overflow: hidden;
+  border-radius: 5px;
+}
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.cartas h5 {
+  margin-top: auto;
+  margin-bottom: 0rem; /* Un pequeño margen entre el título y la descripción */
+  font-size: 1.3rem; /* Tamaño de fuente ajustado */
+  font-weight: 350;
+  color: #161616; /* Color de texto claro */
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Asegura que el texto no se desborde */
+  white-space: nowrap;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.cartas p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2e2e2e; /* Un gris suave para la descripción */
+  line-height: 1.5; /* Mejor legibilidad */
+  margin-bottom: 1rem; /* Espacio entre párrafo y el botón */
+}
+
+.cartas button {
+  font-weight: 700; /* Texto en negrita */
+  background-color: #ffd1e4; /* Fondo cálido amarillento */
+  color: #333; /* Texto oscuro */
+  height: 40px; /* Altura fija de 50px */
+  width: 180px; /* Ancho fijo de 120px */
+  font-size: 0.8rem; /* Un poco más grande que el texto normal */
+  transition: 0.3s ease; /* Transición suave de 0.3s para hover/active */
+  cursor: pointer; /* Cursor de mano para indicar clicable */
+  border: none; /* Sin borde extra */
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.cartas button:hover {
+  background-color: rgb(
+    252,
+    187,
+    213
+  ); /* Cambia a un tono más oscuro al hacer hover */
+}
+
+.cartas button:active {
+  transform: translateY(
+    2px
+  ); /* Baja el botón 2px al hacer clic (efecto de presión) */
+  background-color: #ff77ad; /* Tono aún más oscuro al presionar */
+}
+
+/*VER MAS*/
+.condor {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ocultamos checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+label#label {
+  order: 2; /* Mover el label después de masopciones */
+  text-align: center;
+  border-radius: 1rem;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #ffd1e4;
+  color: #161616;
+  cursor: pointer;
+  grid-column: 1/-1;
+  display: block;
+  width: 400px;
+  margin-left: -8em;
+  transition: 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+label#label:hover {
+  transform: translateY(2px);
+  background-color: #ffa4c8;
+}
+
+label#label::before {
+  content: "Ver mas productos";
+}
+
+#btnver:checked + label#label::before {
+  content: "Ver menos productos";
+}
+
+.masopciones {
+  display: none;
+  grid-column: 1 / -1;
+}
+
+#btnver:checked ~ .masopciones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 80em;
+  row-gap: 0.1rem;
+  margin-left: -37em;
+  grid-column: 1 / -1;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/*footer*/
+
+.pie-pagina {
+  background-color: #ffd4e5; /*color fondo del div*/
+  width: 100%; /*100% del contenido*/
+}
+
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 200px; /*separador del contenido*/
+  padding: 10px 30px; /*separador del margen*/
+  justify-content: center; /*centrar contenido*/
+}
+
+.pie-pagina .grupo-1 .titulo-pie {
+  color: black;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.pie-pagina .grupo-1 .nav {
+  display: flex;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 22px;
+  line-height: 10px;
+  transition: 0.3s ease;
+}
+.pie-pagina .grupo-1 ul {
+  color: #000000;
+}
+.pie-pagina .grupo-1 .nav:hover {
+  color: #ff4f95;
+}
+
+.pie-pagina .grupo-1 .cont {
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 15px;
+  height: 22px;
+  line-height: 10px;
+  transition: 0.3 ease;
+}
+.pie-pagina .grupo-1 .cont:hover {
+  color: #ff4f95;
+  font-size: 1rem;
+  transform: translateY(-4px);
+}
+
+.pie-pagina .grupo-1 .redes {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 25px;
+  height: 22px;
+  line-height: 10px;
+  margin-left: 17px;
+  transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .redes:hover {
+  color: #ff4f95;
+}
+
+.pie-pagina .grupo-2 {
+  background-color: #ff92bf;
+  padding: 15px 10px;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+.arriba {
+  font-family: Arial, Helvetica, sans-serif;
+  float: right;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+.rellenos-lista input[type="checkbox"] {
+  display: inline-block; /* fuerza que se vea */
+  appearance: checkbox; /* asegura estilo nativo */
+  margin-right: 5px;
+}

@@ -1,0 +1,591 @@
+/*cuando es con . se llama a una clase, sin el . es una etiqueta*/
+body {
+  /*esto es el todo general*/
+  background-color: #fff1f8;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.div-2,
+.div-1 {
+  height: 50px;
+}
+.div-1 {
+  /*encabezado superior*/
+  background-color: #ff77ad;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.div-1 input {
+  /*Buscador*/
+  padding: 7px;
+  width: 200px;
+  position: absolute;
+  top: 9px;
+  right: 190px;
+  background-color: #ffa4c8;
+  border-radius: 20px;
+  border: none;
+}
+.div-1 input:focus {
+  /*no funciona*/
+  border-color: transparent;
+}
+.div-1 .usuario {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 85px;
+  gap: 20px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.div-1 .carritoicon {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 140px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.div-1 .coments {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+
+.div-1 .unno {
+  /*separador |*/
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  right: 120px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.div-1 .doss {
+  /*separador |*/
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  right: 70px;
+  font-size: 23px;
+  color: rgb(95, 95, 95);
+}
+.politica {
+  /*politica y privacidad*/
+  padding: 5px;
+  position: absolute;
+  left: 160px;
+  top: 16px;
+  font-size: 12px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-2 {
+  /*encabezado inferior*/
+  background-color: #ff4f95;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 50px;
+  position: sticky;
+  top: 50px;
+  z-index: 999;
+}
+.div-2 a {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: 0.3s ease;
+}
+
+.div-2 a:hover {
+  color: #ececec;
+  font-size: 1.4rem;
+  transform: translateY(-4px);
+}
+
+.tab-activa {
+  border-bottom: 1.8px solid rgb(255, 209, 227);
+  font-weight: bold;
+  color: #fff !important;
+}
+
+img#logo {
+  position: absolute;
+  margin-left: 40px;
+  max-height: 500%;
+  width: 110px;
+}
+.todoo {
+  /*engloba todo el codigo*/
+  font-family: " sans-serif"; /*tipo de letra*/
+  /*lo que eta atras de todo o sea el cuadrado que encuadra todo*/
+
+  top: 200px; /* Desplaza 20 píxeles desde el borde superior */
+
+  height: 950px;
+  background-color: #ffd1e4;
+  margin-bottom: 100px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cuerpo {
+  /*tambien engloba todo pero uno mas adentro que el div princpal*/
+  padding: 1rem;
+  margin: 1px;
+}
+/*el encabezado*/
+div#encabezado {
+  background: linear-gradient(#ff77ad 50%, #ff4f95 50%);
+  height: 100px;
+}
+
+/**/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
+
+.form-section {
+  flex: 2;
+  padding: 40px;
+  background-color: #fff0f4;
+}
+
+.form-section h1 {
+  color: #d65784;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #e4c9d0;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.form-section button {
+  margin-top: 25px;
+  padding: 14px;
+  background-color: #ff80a4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  width: 800px;
+}
+.form-section button:hover {
+  /*efectos del boton siguiente*/
+  transform: translateY(-4px);
+  background-color: #ff77ad;
+}
+
+.summary-section {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff9fc;
+  border-left: 2px dashed #ffcce0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.summary-section h2 {
+  color: #b9446b;
+  margin-bottom: 20px;
+}
+
+.order-box {
+  background-color: #ffeef4;
+  border: 2px solid #ffbdd2;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 190, 220, 0.3);
+  width: 300px; /*controla el tamaño de el cuadrado donde estan las fotos*/
+}
+
+.order-box p {
+  display: flex;
+}
+
+.order-box .total {
+  font-size: 18px;
+  color: #a03656;
+}
+
+hr {
+  margin: 40px 0;
+
+  border: none;
+  border-top: 1px dashed #e6a6b8;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .summary-section {
+    border-left: none;
+    border-top: 2px dashed #ffcce0;
+  }
+}
+
+/**/
+.textarea {
+  /*para el text input (que se agrande y que baje el texto que se escribe)*/
+  width: 900px;
+  height: 900px;
+  font-size: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+  resize: none; /* opcional: evita que el usuario cambie el tamaño */
+  overflow-wrap: break-word; /* para cortar palabras largas */
+}
+/* From Uiverse.io by alexruix */
+.group {
+  /*no tengo ni idea que es pero sirve para el efecto*/
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+.input {
+  /*no tengo ni idea que es pero sirve para el efecto*/
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #1212c7;
+  color: #9997c0;
+  transition: 0.3s ease;
+}
+
+.icon {
+  /*no tengo ni idea que es pero sirve para el efecto*/
+  position: absolute;
+  left: 1rem;
+  fill: #ff50b6;
+  width: 1rem;
+  height: 1rem;
+}
+.r {
+  /*para ponerle color/efecto a todos los input*/
+  justify-content: center;
+  height: 25px;
+  border-radius: 19px;
+}
+.rr {
+  /*para ponerle color/efecto a todos los input*/
+  justify-content: center;
+  height: 25px;
+  border-radius: 19px;
+  width: 60px;
+  text-align: center;
+}
+.r::placeholder {
+  /*no tengo ni idea que es,pero sirve para el efecto*/
+  color: #9e9ea7;
+}
+.rr::placeholder {
+  /*no tengo ni idea que es,pero sirve para el efecto*/
+  color: #9e9ea7;
+}
+.r#textarea {
+  /*para el text input (que se agrande y que baje el texto que se escribe)*/
+  width: 800px;
+  height: 800px;
+  font-size: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+  resize: none; /* opcional: evita que el usuario cambie el tamaño */
+  overflow-wrap: break-word; /* para cortar palabras largas */
+}
+.r:focus,
+textarea:hover {
+  /*no tengo ni idea que es,pero sirve para el efecto*/ /*hover pasarle por arriba/ focus al apretar*/
+  outline: none;
+  border-color: rgba(255, 62, 181, 0.4);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px rgb(247, 162, 214);
+}
+.r:focus,
+input:hover {
+  /*no tengo ni idea que es,pero sirve para el efecto*/ /*hover pasarle por arriba/ focus al apretar*/
+  outline: none;
+  border-color: rgba(255, 62, 181, 0.4);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px rgb(247, 162, 214);
+}
+.rr:focus,
+input:hover {
+  /*no tengo ni idea que es,pero sirve para el efecto*/ /*hover pasarle por arriba/ focus al apretar*/
+  outline: none;
+  border-color: rgba(255, 62, 181, 0.4);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px rgb(247, 162, 214);
+}
+
+.circulo1 {
+  position: relative; /* Contenedor relativo para posicionar el círculo encima */
+  display: inline-block;
+}
+
+.img1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Hace la imagen circular (opcional) */
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+}
+.numero1 {
+  position: absolute;
+  top: -1px; /* Ajusta la posición vertical del círculo */
+  right: -5px; /* Ajusta la posición horizontal del círculo */
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 245, 245);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 50%; /* Hace el círculo redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.producto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.info-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.torrr {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.pretarta {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+}
+.canti {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+.tama {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+
+.circulo2 {
+  position: relative; /* Contenedor relativo para posicionar el círculo encima */
+  display: inline-block;
+}
+.img2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Hace la imagen circular (opcional) */
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+}
+.numero2 {
+  position: absolute;
+  top: -1px; /* Ajusta la posición vertical del círculo */
+  right: -5px; /* Ajusta la posición horizontal del círculo */
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 245, 245);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 50%; /* Hace el círculo redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.producto2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.info-producto2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.torrr2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.pretarta2 {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+}
+.canti2 {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+.tama2 {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+.ico-resu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ico-resu i {
+  color: #c55f81;
+}
+.ico-dato {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/*footer*/
+
+.pie-pagina {
+  background-color: #ffd4e5; /*color fondo del div*/
+  width: 100%; /*100% del contenido*/
+}
+
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 200px; /*separador del contenido*/
+  padding: 10px 30px; /*separador del margen*/
+  justify-content: center; /*centrar contenido*/
+}
+
+.pie-pagina .grupo-1 .titulo-pie {
+  color: black;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.pie-pagina .grupo-1 .nav {
+  display: flex;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 22px;
+  line-height: 10px;
+  transition: 0.3s ease;
+}
+.pie-pagina .grupo-1 ul{
+  color: #000000;
+}
+.pie-pagina .grupo-1 .nav:hover {
+  color: #ff4f95;
+}
+
+.pie-pagina .grupo-1 .cont {
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 15px;
+  height: 22px;
+  line-height: 10px;
+  transition: 0.3 ease;
+}
+.pie-pagina .grupo-1 .cont:hover {
+  color: #ff4f95;
+  font-size: 1rem;
+  transform: translateY(-4px);
+}
+
+.pie-pagina .grupo-1 .redes {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 25px;
+  height: 22px;
+  line-height: 10px;
+  margin-left: 17px;
+  transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .redes:hover {
+  color: #ff4f95;
+}
+
+.pie-pagina .grupo-2 {
+  background-color: #ff92bf;
+  padding: 15px 10px;
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
