@@ -1,0 +1,53 @@
+/*Preguntas frecuentes*/
+.all-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+/*el cuadrado de los comentarios*/
+.info {
+  background-color: #ffffff;
+  border: 2px solid #ffd6e8;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  width: 250px;
+  height: 290px;
+  box-shadow: 8px 10px 20px rgba(59, 9, 34, 0.15);
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+/*texto de del titulo de los comentarios*/
+.imagen {
+  position: absolute;
+  margin-left: 89px;
+  margin-top: -2%;
+  max-height: 500%;
+  width: 80px;
+}
+
+.texto2 {
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.texto2 ul {
+  font-weight: 400;
+  padding-left: 0;
+  list-style: none;
+}
+
+.texto2 li::before {
+  margin-right: 0.5rem;
+}
+
+.texto2 li {
+  margin-bottom: 1.5rem;
+}
+i{
+ color: rgb(238, 238, 6);
+}
