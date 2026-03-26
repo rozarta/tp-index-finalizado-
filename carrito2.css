@@ -233,6 +233,11 @@ img#logo {
       margin-top: 2em;
   font-size: 21px;
 }
+.cantidad{
+       margin-right: 15em;
+  font-size: 21px;
+  margin-top: 50px;
+}
 .e {
   color: rgb(0, 158, 0);
 }
