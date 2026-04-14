@@ -21,7 +21,7 @@
 .imagen {
   position: absolute;
   margin-left: 89px;
-  margin-top: -2%;
+  margin-top: 0%;
   max-height: 500%;
   width: 80px;
 }
@@ -32,7 +32,7 @@
   font-size: 1.1rem;
   display: block;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .texto2 ul {
@@ -48,6 +48,11 @@
 .texto2 li {
   margin-bottom: 1.5rem;
 }
+li{
+  list-style: none;
+}
 i{
- color: rgb(238, 238, 6);
+  margin-left: 1.5rem;
+  
+ color: rgb(255, 232, 25);
 }
